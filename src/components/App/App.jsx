@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
-export class App {
+class App {
 
   render(){
 return (
@@ -20,3 +20,6 @@ return (
   }
   
 };
+
+
+export default App
