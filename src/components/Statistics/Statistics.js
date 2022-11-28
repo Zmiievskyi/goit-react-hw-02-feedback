@@ -4,7 +4,7 @@ import { TextTitle } from 'components/Common';
 import StatisticsList from './StatisticsList';
 import Notification from './Notification'
 
-export default function Statistics({ state }) {
+export default function Statistics({ state, total, count }) {
   return (
     <Flex
       pt={4}
@@ -14,8 +14,8 @@ export default function Statistics({ state }) {
       alignItems="flex-start"
     >
       <TextTitle title="Statistics" />
-      {state.TOTAL ? (
-        <StatisticsList list={state} />
+      {total() ? (
+        <StatisticsList list={state} total={total()} count={count()} />
       ) : (
         <Notification message="No feedback given" />
       )}

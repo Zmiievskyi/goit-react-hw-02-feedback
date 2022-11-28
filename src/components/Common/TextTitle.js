@@ -9,5 +9,5 @@ export default function TextTitle({title}) {
 
 
 TextTitle.propType = {
-  title: PropTypes.str,
+  title: PropTypes.string,
 };
