@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from '../App/App.styled';
 import { TextTitle } from 'components/Common';
 import StatisticsList from './StatisticsList';
-
+import Notification from './Notification'
 
 export default function Statistics({ state }) {
   return (
@@ -12,10 +12,13 @@ export default function Statistics({ state }) {
       flexDirection="column"
       flexWrap="wrap"
       alignItems="flex-start"
-      alignContent="center"
     >
       <TextTitle title="Statistics" />
-      <StatisticsList list={state} />
+      {state.TOTAL ? (
+        <StatisticsList list={state} />
+      ) : (
+        <Notification message="No feedback given" />
+      )}
     </Flex>
   );
 }
