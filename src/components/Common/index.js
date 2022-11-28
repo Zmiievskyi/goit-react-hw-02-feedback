@@ -1,1 +1,1 @@
-export { default as TextTitle } from './TextTitle';
+export { default as Section } from './Section';

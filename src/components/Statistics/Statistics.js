@@ -1,24 +1,25 @@
-import React from 'react';
-import { Flex } from '../App/App.styled';
-import { TextTitle } from 'components/Common';
-import StatisticsList from './StatisticsList';
-import Notification from './Notification'
+import PropTypes from 'prop-types';
+import { Box } from '../App/App.styled';
 
-export default function Statistics({ state, total, count }) {
+export default function Statistics({ list, total, count }) {
+  const id = Object.keys(list);
   return (
-    <Flex
-      pt={4}
-      width={350}
-      flexDirection="column"
-      flexWrap="wrap"
-      alignItems="flex-start"
-    >
-      <TextTitle title="Statistics" />
-      {total() ? (
-        <StatisticsList list={state} total={total()} count={count()} />
-      ) : (
-        <Notification message="No feedback given" />
-      )}
-    </Flex>
+    <Box flexDirection="column" alignContent="space-around" flexWrap="wrap">
+      {id.map(item => {
+        return (
+          <li key={item}>
+            {item}: {list[item]}
+          </li>
+        );
+      })}
+      <li>Total: {total} </li>
+      <li>Positive percentage: {count}</li>
+    </Box>
   );
 }
+
+Statistics.propType = {
+  list: PropTypes.shape.isRequired,
+  total: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
+};

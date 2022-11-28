@@ -1,12 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { Flex } from '../App/App.styled';
+import { Box } from '../App/App.styled';
 
 export default function Notification({message}) {
   return (
-    <Flex flexDirection="column" alignContent="space-around" flexWrap="wrap">
+    <Box flexDirection="column" alignContent="space-around" flexWrap="wrap">
       <li>{message}</li>
-    </Flex>
+    </Box>
   );
 }
 
