@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../App/App.styled';
-import { Btn } from './FeedbackOptions.module';
+import { Btn } from './FeedbackOptions.styled';
 
 export default class FeedbackOptions extends React.Component {
   handelMousedown = e => {
